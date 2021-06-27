@@ -1,4 +1,4 @@
-import { delay } from './deps';
+import { delay } from './deps.ts';
 
 function beep() {
   Deno.stdout.write('\u0007');
