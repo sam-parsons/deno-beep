@@ -5,7 +5,10 @@ function beep() {
   Deno.stdout.write(new TextEncoder().encode('\u0007'));
 }
 
-export default async function beeper(numberPattern, delayTime = 500) {
+export default async function beeper(
+  numberPattern: number | string,
+  delayTime: number = 500
+) {
   // handle user supplied flags
   if (Deno.args.includes('--no-beep')) {
     return;
