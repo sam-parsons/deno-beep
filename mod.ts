@@ -1,5 +1,4 @@
-// import { delay } from './deps.ts';
-import { delay } from 'https://deno.land/x/delay@v0.2.0/mod.ts';
+import { delay } from './deps.ts';
 
 function beep() {
   Deno.stdout.write(new TextEncoder().encode('\u0007'));
