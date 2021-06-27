@@ -7,7 +7,7 @@ function beep() {
 export default async function beeper(
   numberPattern?: number | string,
   delayTime: number = 500
-) {
+): Promise<any> {
   // handle user supplied flags
   if (Deno.args.includes('--no-beep')) {
     return;
@@ -19,6 +19,7 @@ export default async function beeper(
       await delay(delayTime);
       beep();
     }
+    return;
   } else if (typeof numberPattern === 'string') {
     const patternArray = numberPattern.split('');
     if (patternArray[0] === '#') {
@@ -27,7 +28,7 @@ export default async function beeper(
     delay(delayTime);
     patternArray.shift();
     if (patternArray[0]) {
-      beeper(patternArray.join(''), delayTime);
+      return beeper(patternArray.join(''), delayTime);
     } else {
       return;
     }
