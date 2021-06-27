@@ -6,7 +6,7 @@ function beep() {
 }
 
 export default async function beeper(
-  numberPattern: number | string,
+  numberPattern?: number | string,
   delayTime: number = 500
 ) {
   // handle user supplied flags
