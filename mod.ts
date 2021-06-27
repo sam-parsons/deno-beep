@@ -2,7 +2,7 @@
 import { delay } from 'https://deno.land/x/delay@v0.2.0/mod.ts';
 
 function beep() {
-  Deno.stdout.write('\u0007');
+  Deno.stdout.write(new TextEncoder().encode('\u0007'));
 }
 
 export default async function beeper(numberPattern, delayTime = 500) {
